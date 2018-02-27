@@ -39,7 +39,7 @@ public class UserServiceImplTest {
 
         user = new User();
         user.setUserName("Erik Alves");
-        Util.interestCalculation(user);
+
         savedUser = service.save(user);
         LOGGER.debug("saved user ID {}",savedUser.toString());
         Assert.assertNotNull(savedUser.getUserId());

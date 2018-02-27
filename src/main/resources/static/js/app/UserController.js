@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app').controller('UserController',
+var module = angular.module('app.controllers', []);
+
+module.controller('UserController',
     ['UserService', '$scope',  function( UserService, $scope) {
 
         var self = this;

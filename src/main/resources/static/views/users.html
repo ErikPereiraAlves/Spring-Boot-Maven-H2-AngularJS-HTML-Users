@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Users List</title>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+
+</head>
+
+<body ng-app="app">
+
+
+<div class="container" ng-controller="UserController as ctrl">
+
+    <div class="generic-container">
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><span class="lead">Users</span></div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+
+                            <th width="100"></th>
+                            <th width="100"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="u in ctrl.getAllUsers()">
+                            <td>{{u.userId}}</td>
+                            <td>{{u.userName}}</td>
+
+                            <td><button type="button" ng-click="ctrl.editUser(u.userId)" class="btn btn-success custom-width">Edit</button></td>
+                            <td><button type="button" ng-click="ctrl.removeUser(u.userId)" class="btn btn-danger custom-width">Remove</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+<script src="js/lib/angular.min.js" ></script>
+<script src="js/lib/angular-ui-router.min.js" ></script>
+<script src="js/lib/localforage.min.js" ></script>
+<script src="js/lib/ngStorage.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/UserService.js"></script>
+<script src="js/app/UserController.js"></script>
+
+</html>

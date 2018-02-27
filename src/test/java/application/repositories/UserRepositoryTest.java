@@ -33,7 +33,7 @@ public class UserRepositoryTest {
 
         createdUser = new User();
         createdUser.setUserName("Erik Alves");
-        Util.interestCalculation(createdUser);
+
     }
 
     @Test

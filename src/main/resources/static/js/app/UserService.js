@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('app').factory('UserService',
-    ['$localStorage', '$http', '$q', 'urls',
-        function ($localStorage, $http, $q, urls) {
+angular.module('app.services', []).factory('UserService',
+    ['$localStorage', '$http', '$q',
+        function ($localStorage, $http, $q) {
 
             var factory = {
                 loadAllUsers: loadAllUsers,

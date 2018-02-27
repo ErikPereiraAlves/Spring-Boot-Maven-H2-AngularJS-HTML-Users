@@ -53,7 +53,7 @@ public class UserRestApiControllerTest {
         //given
         User user = new User();
         user.setUserName("Jose Maria DBC");
-        Util.interestCalculation(user);
+
         savedUser = service.save(user);
         json = Util.getGson().toJson(savedUser);
         LOGGER.debug("Json representation of a the created entity {} ", json);

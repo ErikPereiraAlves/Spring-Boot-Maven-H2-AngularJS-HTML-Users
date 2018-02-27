@@ -1,3 +1,3 @@
 'use strict'
 
-var app = angular.module('app', ['ui.bootstrap', 'app.controllers','app.services']);
+var app = angular.module('app', ['ui.router','ngStorage','ngRoute','app.controllers','app.services']);

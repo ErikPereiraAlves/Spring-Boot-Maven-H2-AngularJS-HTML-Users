@@ -106,38 +106,13 @@ public class Util {
         return list;
     }
 
-    public static void interestCalculation(User user){
-
-        LOGGER.debug("User's current interest {} ", user.getUserInterest());
-        Double updatedInterest = 1.0;
-        if(null!=user) {
-            if (user.getUserRisk().equalsIgnoreCase("B")) {
-                updatedInterest = user.getUserInterest() * 1.1;
-                user.setUserInterest(updatedInterest);
-            } else if (user.getUserRisk().equalsIgnoreCase("C")) {
-                updatedInterest = user.getUserInterest() * 1.2;
-                user.setUserInterest(updatedInterest);
-            }
-        }
-        else{
-            throw new ApplicationException("User object is null");
-        }
-    }
 
     public static void main(String[] args) {
 
         User user = new User();
         user.setUserId(1l);
         user.setUserName("Erik Alves");
-        user.setUserLimitCredit(new BigDecimal("100.00"));
-        user.setUserRisk("B");
-        user.setUserInterest(22.25);
-        if (user.getUserRisk().equalsIgnoreCase("B")){
-            user.setUserInterest(user.getUserInterest() *1.1);
-        }
-        else if (user.getUserRisk().equalsIgnoreCase("C")){
-            user.setUserInterest(user.getUserInterest() *1.2);
-        }
+
         LOGGER.debug("User {} ", user.toString());
         String json = getGson().toJson(user);
         LOGGER.debug("Json representation of a the created Entity {} ", json);
